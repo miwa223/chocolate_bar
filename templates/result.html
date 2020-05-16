@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body class="main">
+
+<div class="heading">
+    The rating of your chocolate bar is...<h1 align="center">{{  y_pred  }}</h1>
+</div>
+
+<div align="left">
+  <h5>Flavors of Cacao Rating System:</h5>
+  5= Elite (Transcending beyond the ordinary limits)<br>
+  4= Premium (Superior flavor development, character and style)<br>
+  3= Satisfactory(3.0) to praiseworthy(3.75) (well made with special qualities)<br>
+  2= Disappointing (Passable but contains at least one significant flaw)<br>
+  1= Unpleasant (mostly unpalatable)
+</div>
+
+<div align="center">
+
+    <table border="1" id="result">
+        <tr>
+            <th colspan="9">information</th>
+        </tr>
+        <tr>
+            <th>company name</th><th>company location</th><th>specific bean origin or bar name</th>
+            <th>cocoa percentage</th><th>REF</th>
+            <th>bean origin (country)</th><th>criollo bean</th><th>forastero bean</th><th>blended or not</th>
+        </tr>
+        <tr>
+        {% for param in param_list %}
+            <td>{{ param }}</td>
+        {% endfor %}
+        </tr>
+
+    </table>
+    <a href="/">back</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Chocolate Bar</title>
+  <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body class="main">
+
+<div class="heading">
+  <h1>Rate Your Favorite Chocolate Bar</h1>
+</div>
+
+<div>
+  <form method="post" action="/result">
+    <table id="form">
+
+      <tr><td>company name</td></tr>
+      <tr><td><input type="text" name="company" maxlength="30" placeholder="A. Morin" required></td></tr>
+      <tr><td>company location (manufacturer base country)</td></tr>
+      <tr><td><input type="text" name="company_location" maxlength="30" placeholder="France" required></td></tr>
+      <tr><td>specific bean origin or bar name</td></tr>
+      <tr><td><input type="text" name="species" maxlength="30" placeholder="Agua Grand" required></td></tr>
+      <tr><td>cocoa percentage(%)</td></tr>
+      <tr><td><input type="text" name="cocoa_p" pattern="^[\d]{1,2}.[\d]{1}$" maxlength="4" placeholder="70.5" required></td></tr>
+      <tr><td>REF*</td></tr>
+      <tr><td><input type="text" name="REF" pattern="^[\d]{1,4}$" maxlength="4" placeholder="1000" required></td></tr>
+      <tr><td>bean origin (country)</td></tr>
+      <tr><td><input type="text" name="country" maxlength="30" placeholder="Madagascar" required></td></tr>
+
+      <tr><td>contains criollo bean</td></tr>
+      <tr><td><input type="radio" name="criollo_bean" value=1 required>Yes&nbsp;&nbsp;
+      <input type="radio" name="criollo_bean" value=0>No</td></tr>
+      <tr><td>contains forastero bean</td></tr>
+      <tr><td><input type="radio" name="forastero_bean" value=1 required>Yes&nbsp;&nbsp;
+      <input type="radio" name="forastero_bean" value=0>No</td></tr>
+      <tr><td>blended or not</td></tr>
+      <tr><td><input type="radio" name="is_blend" value=1 required>Yes&nbsp;&nbsp;
+      <input type="radio" name="is_blend" value=0>No</td></tr>
+
+      <tr><td>*A value linked to when the review was entered in the database.
+        <br>Higher = more recent.</td></tr>
+      <br>
+      <tr><td><input type="submit" value="Check result"></td></tr>
+
+    </table>
+  </form>
+</div>
+
+</body>
+</html>
