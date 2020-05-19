@@ -1,7 +1,7 @@
 import pickle
-import pandas as pd
+#import pandas as pd
 import numpy as np
-from catboost import CatBoostRegressor, Pool
+from catboost import Pool
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
@@ -9,7 +9,6 @@ with open('./data/catboost_model.pkl', 'rb') as f:
     model = pickle.load(f)
 with open('./data/df.pkl', 'rb') as f:
     df = pickle.load(f)
-
 
 @app.route('/')
 def index():
@@ -26,14 +25,14 @@ def result():
 
     change = lambda x: "Yes" if x==1 else "No"
     criollo_bean = int(request.form['criollo_bean'])
-    criollo_bean = change(criollo_bean)
+    criollo_bean2 = change(criollo_bean)
     forastero_bean = int(request.form['forastero_bean'])
-    forastero_bean = change(forastero_bean)
+    forastero_bean2 = change(forastero_bean)
     is_blend = int(request.form['is_blend'])
-    is_blend = change(is_blend)
+    is_blend2 = change(is_blend)
 
     param_list = [company, company_location, species, cocoa_p, REF,
-    country, criollo_bean, forastero_bean, is_blend]
+    country, criollo_bean2, forastero_bean2, is_blend2]
 
     param = pd.DataFrame([{'company':company,'company_location':company_location,
     'species':species,'cocoa_p':cocoa_p,'REF':REF,'country':country,
@@ -60,4 +59,4 @@ def result():
     return render_template('result.html', param_list=param_list, y_pred=y_pred)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=4000)
+    app.run(debug=True, port=4040)
