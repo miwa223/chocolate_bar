@@ -1,7 +1,7 @@
 import pickle
 import pandas as pd
 import numpy as np
-#from catboost import Pool
+from catboost import Pool
 from flask import Flask, render_template, request
 app = Flask(__name__)
 

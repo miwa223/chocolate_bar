@@ -9,6 +9,7 @@ verify_ssl = true
 flask = "*"
 pandas = "*"
 numpy = "*"
+catboost = "*"
 
 [requires]
 python_version = "3.7"
