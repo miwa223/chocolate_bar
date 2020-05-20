@@ -7,9 +7,9 @@ verify_ssl = true
 
 [packages]
 flask = "*"
-pandas = "*"
 numpy = "*"
 catboost = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.7"
